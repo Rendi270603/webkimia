@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMJ Kimia FMIPA UHO - Himpunan Mahasiswa Jurusan Kimia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#203759',
+                        secondary: '#f9b217',
+                        light: '#f9fafb',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .slider-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slider-item {
+            min-width: 100%;
+        }
+
+        .nav-link.active {
+            color: #203759;
+            font-weight: 600;
+            border-bottom: 2px solid #f9b217;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: linear-gradient(to right, #203759, #f9b217);
+            margin: 8px 0 0;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: #203759;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: -4px;
+            top: 8px;
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            background-color: #f9b217;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center mb-3 md:mb-0">
+                <div class="flex items-center">
+                    <!-- Logo UHO -->
+                    <img src="uho.png" class="w-14 h-14 mr-2 rounded-full" />
+                    <!-- Logo HMJ Kimia -->
+                    <img src="hmj.png" class="w-14 h-14 mr-2 rounded-full" />
+                    <!-- Logo Kabinet Fluorine -->
+                    <img src="kabinet fluorine.png" class="w-14 h-14 mr-4 rounded-full" />
+                </div>
+                <div class="ml-3">
+                    <h1 class="text-lg md:text-xl font-bold text-primary">HMJ Kimia FMIPA UHO</h1>
+                    <p class="text-xs md:text-sm text-gray-600">Himpunan Mahasiswa Jurusan Kimia</p>
+                    <p class="text-xs md:text-sm text-gray-600">Fakultas Matematika dan Ilmu Pengetahuan Alam</p>
+                    <p class="text-xs md:text-sm text-gray-600">Universitas Halu Oleo</p>
+                </div>
+            </div>
+
+            <nav class="w-full md:w-auto">
+                <button id="mobile-menu-button"
+                    class="md:hidden w-full flex justify-center items-center px-4 py-2 bg-primary text-white rounded">
+                    <i class="fas fa-bars mr-2"></i> Menu
+                </button>
+                <ul id="nav-menu"
+                    class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 mt-3 md:mt-0">
+                    <li><a href="#beranda" class="nav-link active hover:text-secondary transition-colors">Beranda</a>
+                    </li>
+                    <li><a href="#profil" class="nav-link hover:text-secondary transition-colors">Profil</a></li>
+                    <li><a href="#berita" class="nav-link hover:text-secondary transition-colors">Berita</a></li>
+                    <li><a href="#kegiatan" class="nav-link hover:text-secondary transition-colors">Kegiatan</a></li>
+                    <li><a href="#galeri" class="nav-link hover:text-secondary transition-colors">Galeri</a></li>
+                    <li><a href="#akademik" class="nav-link hover:text-secondary transition-colors">Akademik</a></li>
+                    <li><a href="#kontak" class="nav-link hover:text-secondary transition-colors">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with Slider -->
+    <section id="beranda" class="pt-28 md:pt-32">
+        <div class="slider-container h-[300px] md:h-[500px]">
+            <div class="slider">
+                <div class="slider-item relative">
+                    <div class="absolute inset-0 z-0">
+                        <img src="fmipa.jpg" alt="Background FMIPA" class="w-full h-full object-cover opacity-60" />
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-secondary/80 z-10"></div>
+                    <div class="absolute inset-0 flex items-center justify-center z-20">
+                        <div class="text-center text-white px-4">
+                            <h2 class="text-2xl md:text-4xl font-bold mb-2">Selamat Datang di HMJ Kimia FMIPA UHO</h2>
+                            <p class="text-sm md:text-lg max-w-2xl mx-auto">Himpunan Mahasiswa Jurusan Kimia Fakultas
+                                Matematika dan Ilmu Pengetahuan Alam Universitas Halu Oleo</p>
+                            <a href="#profil"
+                                class="inline-block mt-4 px-6 py-2 bg-white text-primary font-medium rounded-full hover:bg-gray-100 transition-colors">Tentang
+                                Kami</a>
+                        </div>
+                    </div>
+                    <div class="h-full bg-gray-200 flex items-center justify-center">
+                        <svg class="w-full h-full" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="800" height="500" fill="#f0f0f0" />
+                            <circle cx="400" cy="250" r="100" fill="#1a56db" opacity="0.3" />
+                            <circle cx="300" cy="350" r="80" fill="#10b981" opacity="0.3" />
+                            <circle cx="500" cy="150" r="120" fill="#1a56db" opacity="0.2" />
+                            <text x="400" y="250" font-size="24" text-anchor="middle" fill="#333">Kegiatan Mahasiswa
+                                Kimia</text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="slider-item relative">
+                    <div class="absolute inset-0 z-0">
+                        <img src="kimia.png" alt="Background Kimia" class="w-full h-full object-cover opacity-80" />
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-secondary/80 z-10"></div>
+                    <div class="absolute inset-0 flex items-center justify-center z-20">
+                        <div class="text-center text-white px-4">
+                            <h2 class="text-2xl md:text-4xl font-bold mb-2">Kembangkan Potensi Akademik</h2>
+                            <p class="text-sm md:text-lg max-w-2xl mx-auto">Menjadi wadah pengembangan potensi mahasiswa
+                                Kimia dalam bidang akademik dan non-akademik</p>
+                            <a href="#akademik"
+                                class="inline-block mt-4 px-6 py-2 bg-white text-primary font-medium rounded-full hover:bg-gray-100 transition-colors">Program
+                                Akademik</a>
+                        </div>
+                    </div>
+                    <div class="h-full bg-gray-200 flex items-center justify-center">
+                        <svg class="w-full h-full" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="800" height="500" fill="#f0f0f0" />
+                            <circle cx="200" cy="250" r="150" fill="#10b981" opacity="0.2" />
+                            <circle cx="600" cy="250" r="150" fill="#1a56db" opacity="0.2" />
+                            <text x="400" y="250" font-size="24" text-anchor="middle" fill="#333">Praktikum
+                                Laboratorium</text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="slider-item relative">
+                    <div class="absolute inset-0 z-0">
+                        <img src="seminar.jpg" alt="Background seminar" class="w-full h-full object-cover opacity-60" />
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-secondary/80 z-10"></div>
+                    <div class="absolute inset-0 flex items-center justify-center z-20">
+                        <div class="text-center text-white px-4">
+                            <h2 class="text-2xl md:text-4xl font-bold mb-2">Bergabunglah Dengan Kami</h2>
+                            <p class="text-sm md:text-lg max-w-2xl mx-auto">Jadilah bagian dari keluarga besar HMJ Kimia
+                                FMIPA UHO dan kembangkan potensimu</p>
+                            <a href="#kontak"
+                                class="inline-block mt-4 px-6 py-2 bg-white text-primary font-medium rounded-full hover:bg-gray-100 transition-colors">Hubungi
+                                Kami</a>
+                        </div>
+                    </div>
+                    <div class="h-full bg-gray-200 flex items-center justify-center">
+                        <svg class="w-full h-full" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="800" height="500" fill="#f0f0f0" />
+                            <polygon points="400,100 600,300 200,300" fill="#1a56db" opacity="0.2" />
+                            <polygon points="400,400 600,200 200,200" fill="#10b981" opacity="0.2" />
+                            <text x="400" y="250" font-size="24" text-anchor="middle" fill="#333">Kegiatan
+                                Organisasi</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <button
+                class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/70 hover:bg-white w-10 h-10 rounded-full flex items-center justify-center z-30 slider-prev">
+                <i class="fas fa-chevron-left text-primary"></i>
+            </button>
+            <button
+                class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/70 hover:bg-white w-10 h-10 rounded-full flex items-center justify-center z-30 slider-next">
+                <i class="fas fa-chevron-right text-primary"></i>
+            </button>
+            <div class="absolute bottom-4 left-0 right-0 flex justify-center z-30 slider-dots">
+                <span class="w-3 h-3 rounded-full bg-white/50 mx-1 cursor-pointer dot active" data-index="0"></span>
+                <span class="w-3 h-3 rounded-full bg-white/50 mx-1 cursor-pointer dot" data-index="1"></span>
+                <span class="w-3 h-3 rounded-full bg-white/50 mx-1 cursor-pointer dot" data-index="2"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profil Section -->
+    <section id="profil" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-primary section-title mb-8">Profil HMJ Kimia</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-primary/5 to-secondary/5 p-6 rounded-lg shadow-md">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-eye text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Visi</h3>
+                    <p class="text-gray-700">Menjadikan HMJ Kimia FMIPA UHO sebagai organisasi yang unggul, profesional,
+                        dan berkontribusi dalam pengembangan ilmu kimia serta membentuk mahasiswa kimia yang
+                        berintegritas dan berdaya saing.</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-primary/5 to-secondary/5 p-6 rounded-lg shadow-md">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-bullseye text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Misi</h3>
+                    <ul class="text-gray-700 space-y-2 list-disc pl-5">
+                        <li>Meningkatkan kualitas akademik mahasiswa kimia</li>
+                        <li>Mengembangkan potensi dan kreativitas mahasiswa</li>
+                        <li>Membangun kerjasama dengan berbagai pihak</li>
+                        <li>Menyelenggarakan kegiatan yang bermanfaat</li>
+                        <li>Menjaga kekeluargaan antar mahasiswa kimia</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-primary/5 to-secondary/5 p-6 rounded-lg shadow-md">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-history text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Sejarah</h3>
+                    <div class="space-y-3 text-gray-700">
+                        <div class="timeline-item pl-6">
+                            <h4 class="font-medium">Pendirian (2005)</h4>
+                            <p class="text-sm">HIMAKI FMIPA UHO didirikan sebagai wadah aspirasi mahasiswa Jurusan
+                                Kimia.</p>
+                        </div>
+                        <div class="timeline-item pl-6">
+                            <h4 class="font-medium">Pengembangan (2010)</h4>
+                            <p class="text-sm">Perluasan program kerja dan peningkatan kualitas kegiatan akademik.</p>
+                        </div>
+                        <div class="timeline-item pl-6">
+                            <h4 class="font-medium">Pencapaian (2015-sekarang)</h4>
+                            <p class="text-sm">Berbagai prestasi di tingkat regional dan nasional dalam bidang kimia.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Struktur Organisasi -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-primary mb-6">Struktur Organisasi HMJ Kimia FMIPA UHO-Kabinet
+                    Fluorine</h3>
+
+                <div class="bg-gradient-to-br from-primary/5 to-secondary/5 p-6 rounded-lg shadow-md">
+
+                    <!-- Struktur Vertikal: Ketua di atas, Wakil di bawah -->
+                    <div class="flex flex-col items-center gap-6 mb-8">
+                        <!-- Ketua -->
+                        <div class="flex flex-col items-center mt-8">
+                            <div class="w-24 h-24 rounded-full overflow-hidden mb-3 ring-4 ring-primary">
+                                <img src="kahfi.jpg" alt="Ketua" class="w-full h-full object-cover" />
+                            </div>
+                            <h4 class="font-bold text-[13px]">Ketua Umum</h4>
+                            <p class="text-gray-600 text-[13px]">Ashabul Kahfi</p>
+                        </div>
+
+                        <!-- Wakil Ketua -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-24 h-24 rounded-full overflow-hidden mb-3 ring-4 ring-primary">
+                                <img src="kahfi.jpg" alt="Wakil Ketua" class="w-full h-full object-cover" />
+                            </div>
+                            <h4 class="font-bold text-[13px]">Wakil Ketua</h4>
+                            <p class="text-gray-600 text-[13px]">Siti Nurhaliza</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row justify-center md:gap-40 gap-y-8">
+                        <!-- Sekretaris -->
+                        <div class="flex flex-row justify-center gap-6">
+                            <!-- Sekretaris 1 -->
+                            <div class="flex flex-col items-center w-32">
+                                <div class="w-24 h-24 rounded-full overflow-hidden mb-3 ring-4 ring-primary">
+                                    <img src="kahfi.jpg" alt="Sekretaris 1" class="w-full h-full object-cover" />
+                                </div>
+                                <h4 class="font-bold text-center text-[13px]">Sekretaris 1</h4>
+                                <p class="text-gray-600 text-center text-[13px]">Dewi Anggraini</p>
+                            </div>
+                            <!-- Sekretaris 2 -->
+                            <div class="flex flex-col items-center w-32">
+                                <div class="w-24 h-24 rounded-full overflow-hidden mb-3 ring-4 ring-primary">
+                                    <img src="kahfi.jpg" alt="Sekretaris 2" class="w-full h-full object-cover" />
+                                </div>
+                                <h4 class="font-bold text-center text-[13px]">Sekretaris 2</h4>
+                                <p class="text-gray-600 text-center text-[13px]">Lilis Suryani</p>
+                            </div>
+                        </div>
+
+                        <!-- Bendahara -->
+                        <div class="flex flex-row justify-center gap-6">
+                            <!-- Bendahara 1 -->
+                            <div class="flex flex-col items-center w-32">
+                                <div class="w-24 h-24 rounded-full overflow-hidden mb-3 ring-4 ring-primary">
+                                    <img src="kahfi.jpg" alt="Bendahara 1" class="w-full h-full object-cover" />
+                                </div>
+                                <h4 class="font-bold text-center text-[13px]">Bendahara 1</h4>
+                                <p class="text-gray-600 text-center text-[13px]">Rini Susanti</p>
+                            </div>
+                            <!-- Bendahara 2 -->
+                            <div class="flex flex-col items-center w-32">
+                                <div class="w-24 h-24 rounded-full overflow-hidden mb-3 ring-4 ring-primary">
+                                    <img src="kahfi.jpg" alt="Bendahara 2" class="w-full h-full object-cover" />
+                                </div>
+                                <h4 class="font-bold text-center text-[13px]">Bendahara 2</h4>
+                                <p class="text-gray-600 text-center text-[13px]">Ayu Lestari</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DIVISI BIRO KESEKRETARIATAN -->
+                    <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                        <div class="flex flex-row justify-center gap-6">
+                            <div class="flex flex-col items-center">
+                                <div class="w-24 h-24 rounded-full overflow-hidden mb-3 ring-4 ring-primary">
+                                    <img src="kahfi.jpg" alt="Ketua Divisi Akademik"
+                                        class="w-full h-full object-cover" />
+                                </div>
+                                <h4
+                                    class="text-[13px] bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                                    Ketua</h4>
+                                <h4 class="font-bold text-[13px]">D. Biro Kesekretariatan</h4>
+                                <p class="text-gray-600 text-[13px]">Budi Santoso</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-24 h-24 rounded-full overflow-hidden mb-3 ring-4 ring-primary">
+                                    <img src="kahfi.jpg" alt="Sekretaris Divisi Akademik"
+                                        class="w-full h-full object-cover" />
+                                </div>
+                                <h4
+                                    class="text-[13px] bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                                    Sekretaris</h4>
+                                <h4 class="font-bold text-[13px]">D. Biro Kesekretariatan</h4>
+                                <p class="text-gray-600 text-[13px]">Eka Putri</p>
+                            </div>
+                        </div>
+
+                        <!-- DIVISI PENALARAN -->
+                        <div class="flex flex-row justify-center gap-6 mb-8">
+                            <div class="flex flex-col items-center">
+                                <div class="w-24 h-24 rounded-full overflow-hidden mb-3 ring-4 ring-primary">
+                                    <img src="kahfi.jpg" alt="Ketua Divisi Akademik"
+                                        class="w-full h-full object-cover" />
+                                </div>
+                                <h4
+                                    class="text-[13px] bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                                    Ketua</h4>
+                                <h4 class="font-bold text-[13px]">D. Biro Kesekretariatan</h4>
+                                <p class="text-gray-600 text-[13px]">Budi Santoso</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-24 h-24 rounded-full overflow-hidden mb-3 ring-4 ring-primary">
+                                    <img src="kahfi.jpg" alt="Sekretaris Divisi Akademik"
+                                        class="w-full h-full object-cover" />
+                                </div>
+                                <h4
+                                    class="text-[13px] bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                                    Sekretaris</h4>
+                                <h4 class="font-bold text-[13px]">D. Biro Kesekretariatan</h4>
+                                <p class="text-gray-600 text-[13px]">Eka Putri</p>
+                            </div>
+                        </div>
+
+                        <!-- KESEJAHTERAAN MAHASISWA -->
+                        <div class="flex flex-row justify-center gap-6 mb-8">
+                            <div class="flex flex-col items-center">
+                                <div class="w-24 h-24 rounded-full overflow-hidden mb-3 ring-4 ring-primary">
+                                    <img src="kahfi.jpg" alt="Ketua Divisi Akademik"
+                                        class="w-full h-full object-cover" />
+                                </div>
+                                <h4
+                                    class="text-[13px] bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                                    Ketua</h4>
+                                <h4 class="font-bold text-[13px]">D. Biro Kesekretariatan</h4>
+                                <p class="text-gray-600 text-[13px]">Budi Santoso</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-24 h-24 rounded-full overflow-hidden mb-3 ring-4 ring-primary">
+                                    <img src="kahfi.jpg" alt="Sekretaris Divisi Akademik"
+                                        class="w-full h-full object-cover" />
+                                </div>
+                                <h4
+                                    class="text-[13px] bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                                    Sekretaris</h4>
+                                <h4 class="font-bold text-[13px]">D. Biro Kesekretariatan</h4>
+                                <p class="text-gray-600 text-[13px]">Eka Putri</p>
+                            </div>
+                        </div>
+
+                        <!-- MEDIA KREATIF -->
+                        <div class="flex flex-row justify-center gap-6 mb-8">
+                            <div class="flex flex-col items-center">
+                                <div class="w-24 h-24 rounded-full overflow-hidden mb-3 ring-4 ring-primary">
+                                    <img src="kahfi.jpg" alt="Ketua Divisi Akademik"
+                                        class="w-full h-full object-cover" />
+                                </div>
+                                <h4
+                                    class="text-[13px] bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                                    Ketua</h4>
+                                <h4 class="font-bold text-[13px]">D. Biro Kesekretariatan</h4>
+                                <p class="text-gray-600 text-[13px]">Budi Santoso</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-24 h-24 rounded-full overflow-hidden mb-3 ring-4 ring-primary">
+                                    <img src="kahfi.jpg" alt="Sekretaris Divisi Akademik"
+                                        class="w-full h-full object-cover" />
+                                </div>
+                                <h4
+                                    class="text-[13px] bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                                    Sekretaris</h4>
+                                <h4 class="font-bold text-[13px]">D. Biro Kesekretariatan</h4>
+                                <p class="text-gray-600 text-[13px]">Eka Putri</p>
+                            </div>
+                        </div>
+
+                        <!-- KEROHANIAN -->
+                        <div class="flex flex-row justify-center gap-6 mb-8">
+                            <div class="flex flex-col items-center">
+                                <div class="w-24 h-24 rounded-full overflow-hidden mb-3 ring-4 ring-primary">
+                                    <img src="kahfi.jpg" alt="Ketua Divisi Akademik"
+                                        class="w-full h-full object-cover" />
+                                </div>
+                                <h4
+                                    class="text-[13px] bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                                    Ketua</h4>
+                                <h4 class="font-bold text-[13px]">D. Biro Kesekretariatan</h4>
+                                <p class="text-gray-600 text-[13px]">Budi Santoso</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-24 h-24 rounded-full overflow-hidden mb-3 ring-4 ring-primary">
+                                    <img src="kahfi.jpg" alt="Sekretaris Divisi Akademik"
+                                        class="w-full h-full object-cover" />
+                                </div>
+                                <h4
+                                    class="text-[13px] bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                                    Sekretaris</h4>
+                                <h4 class="font-bold text-[13px]">D. Biro Kesekretariatan</h4>
+                                <p class="text-gray-600 text-[13px]">Eka Putri</p>
+                            </div>
+                        </div>
+
+                        <!--PUBLIK RELATIONSHIP -->
+                        <div class="flex flex-row justify-center gap-6 mb-8">
+                            <div class="flex flex-col items-center">
+                                <div class="w-24 h-24 rounded-full overflow-hidden mb-3 ring-4 ring-primary">
+                                    <img src="kahfi.jpg" alt="Ketua Divisi Akademik"
+                                        class="w-full h-full object-cover" />
+                                </div>
+                                <h4
+                                    class="text-[13px] bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                                    Ketua</h4>
+                                <h4 class="font-bold text-[13px]">D. Biro Kesekretariatan</h4>
+                                <p class="text-gray-600 text-[13px]">Budi Santoso</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-24 h-24 rounded-full overflow-hidden mb-3 ring-4 ring-primary">
+                                    <img src="kahfi.jpg" alt="Sekretaris Divisi Akademik"
+                                        class="w-full h-full object-cover" />
+                                </div>
+                                <h4
+                                    class="text-[13px] bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                                    Sekretaris</h4>
+                                <h4 class="font-bold text-[13px]">D. Biro Kesekretariatan</h4>
+                                <p class="text-gray-600 text-[13px]">Eka Putri</p>
+                            </div>
+                        </div>
+
+                        <!-- KEWIRAUSAHAAN -->
+                        <div class="flex flex-row justify-center gap-6 mb-8">
+                            <div class="flex flex-col items-center">
+                                <div class="w-24 h-24 rounded-full overflow-hidden mb-3 ring-4 ring-primary">
+                                    <img src="kahfi.jpg" alt="Ketua Divisi Akademik"
+                                        class="w-full h-full object-cover" />
+                                </div>
+                                <h4
+                                    class="text-[13px] bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                                    Ketua</h4>
+                                <h4 class="font-bold text-[13px]">D. Biro Kesekretariatan</h4>
+                                <p class="text-gray-600 text-[13px]">Budi Santoso</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-24 h-24 rounded-full overflow-hidden mb-3 ring-4 ring-primary">
+                                    <img src="kahfi.jpg" alt="Sekretaris Divisi Akademik"
+                                        class="w-full h-full object-cover" />
+                                </div>
+                                <h4
+                                    class="text-[13px] bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                                    Sekretaris</h4>
+                                <h4 class="font-bold text-[13px]">D. Biro Kesekretariatan</h4>
+                                <p class="text-gray-600 text-[13px]">Eka Putri</p>
+                            </div>
+                        </div>
+
+                        <!-- MINAT DAN BAKAT -->
+                        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center mb-8"></div>
+                        <div class="flex flex-row justify-center gap-6">
+                            <div class="flex flex-col items-center">
+                                <div class="w-24 h-24 rounded-full overflow-hidden mb-3 ring-4 ring-primary">
+                                    <img src="kahfi.jpg" alt="Ketua Divisi Akademik"
+                                        class="w-full h-full object-cover" />
+                                </div>
+                                <h4
+                                    class="text-[13px] bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                                    Ketua</h4>
+                                <h4 class="font-bold text-[13px]">D. Biro Kesekretariatan</h4>
+                                <p class="text-gray-600 text-[13px]">Budi Santoso</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-24 h-24 rounded-full overflow-hidden mb-3 ring-4 ring-primary">
+                                    <img src="kahfi.jpg" alt="Sekretaris Divisi Akademik"
+                                        class="w-full h-full object-cover" />
+                                </div>
+                                <h4
+                                    class="text-[13px] bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                                    Sekretaris</h4>
+                                <h4 class="font-bold text-[13px]">D. Biro Kesekretariatan</h4>
+                                <p class="text-gray-600 text-[13px]">Eka Putri</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Berita Section -->
+    <section id="berita" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-primary section-title mb-8">Berita</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <img src="seminar.jpg" alt="Seminar" class="w-full h-full object-cover object-bottom" />
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center text-xs text-gray-500 mb-3">
+                            <i class="far fa-calendar-alt mr-1"></i>
+                            <span>15 Mei 2023</span>
+                            <span class="mx-2">|</span>
+                            <i class="far fa-user mr-1"></i>
+                            <span>Admin</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Seminar Nasional Kimia 2023</h3>
+                        <p class="text-gray-600 mb-4">HMJ KIMIA FMIPA UHO menyelenggarakan Seminar Nasional Kimia dengan
+                            tema "Inovasi Kimia untuk Pembangunan Berkelanjutan".</p>
+                        <a href="#" class="text-primary font-medium hover:text-secondary transition-colors">Baca
+                            selengkapnya <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <svg class="w-full h-full" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="200" fill="#f0f0f0" />
+                            <circle cx="200" cy="100" r="50" fill="#f9b217" opacity="0.3" />
+                            <text x="200" y="105" font-size="14" text-anchor="middle" fill="#333">Prestasi
+                                Mahasiswa</text>
+                        </svg>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center text-xs text-gray-500 mb-3">
+                            <i class="far fa-calendar-alt mr-1"></i>
+                            <span>2 April 2023</span>
+                            <span class="mx-2">|</span>
+                            <i class="far fa-user mr-1"></i>
+                            <span>Admin</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Mahasiswa Kimia Raih Juara di PIMNAS</h3>
+                        <p class="text-gray-600 mb-4">Tim mahasiswa Jurusan Kimia FMIPA UHO berhasil meraih medali emas
+                            dalam Pekan Ilmiah Mahasiswa Nasional (PIMNAS) 2023.</p>
+                        <a href="#" class="text-primary font-medium hover:text-secondary transition-colors">Baca
+                            selengkapnya <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <svg class="w-full h-full" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="200" fill="#f0f0f0" />
+                            <circle cx="200" cy="100" r="50" fill="#203759" opacity="0.3" />
+                            <text x="200" y="105" font-size="14" text-anchor="middle" fill="#333">Kerjasama
+                                Industri</text>
+                        </svg>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center text-xs text-gray-500 mb-3">
+                            <i class="far fa-calendar-alt mr-1"></i>
+                            <span>20 Maret 2023</span>
+                            <span class="mx-2">|</span>
+                            <i class="far fa-user mr-1"></i>
+                            <span>Admin</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Kerjasama dengan Industri Kimia</h3>
+                        <p class="text-gray-600 mb-4">HMJ Kimia FMIPA UHO menjalin kerjasama dengan PT. Kimia Farma
+                            untuk program magang dan penelitian mahasiswa.</p>
+                        <a href="#" class="text-primary font-medium hover:text-secondary transition-colors">Baca
+                            selengkapnya <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="#"
+                    class="inline-block px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-colors">Lihat
+                    Semua Berita</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kegiatan Section -->
+    <section id="kegiatan" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-primary section-title mb-8">Kegiatan HMJ Kimia FMIPA UHO</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-primary/5 to-secondary/5 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <span class="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-flask text-white"></i>
+                        </span>
+                        Kegiatan Akademik
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex">
+                            <span
+                                class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center mr-3 flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-xs text-white"></i>
+                            </span>
+                            <div>
+                                <h4 class="font-medium">Seminar Kimia Terapan</h4>
+                                <p class="text-sm text-gray-600">Seminar rutin dengan mengundang pakar kimia dari
+                                    berbagai institusi.</p>
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <span
+                                class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center mr-3 flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-xs text-white"></i>
+                            </span>
+                            <div>
+                                <h4 class="font-medium">Workshop Instrumentasi</h4>
+                                <p class="text-sm text-gray-600">Pelatihan penggunaan instrumen kimia modern untuk
+                                    mahasiswa.</p>
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <span
+                                class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center mr-3 flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-xs text-white"></i>
+                            </span>
+                            <div>
+                                <h4 class="font-medium">Studi Ekskursi</h4>
+                                <p class="text-sm text-gray-600">Kunjungan ke industri kimia dan laboratorium
+                                    penelitian.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-primary/5 to-secondary/5 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <span class="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-users text-white"></i>
+                        </span>
+                        Kegiatan Non-Akademik
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex">
+                            <span
+                                class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center mr-3 flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-xs text-white"></i>
+                            </span>
+                            <div>
+                                <h4 class="font-medium">Chemistry Competition</h4>
+                                <p class="text-sm text-gray-600">Kompetisi kimia tingkat SMA/SMK se-Sulawesi Tenggara.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <span
+                                class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center mr-3 flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-xs text-white"></i>
+                            </span>
+                            <div>
+                                <h4 class="font-medium">Chemistry Day</h4>
+                                <p class="text-sm text-gray-600">Perayaan hari kimia dengan berbagai kegiatan menarik.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <span
+                                class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center mr-3 flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-xs text-white"></i>
+                            </span>
+                            <div>
+                                <h4 class="font-medium">Bakti Sosial</h4>
+                                <p class="text-sm text-gray-600">Kegiatan sosial untuk masyarakat sekitar kampus.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12">
+                <h3 class="text-2xl font-bold text-primary mb-6">Agenda Mendatang</h3>
+
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white rounded-lg overflow-hidden shadow-md">
+                        <thead class="bg-primary text-white">
+                            <tr>
+                                <th class="py-3 px-4 text-left">Tanggal</th>
+                                <th class="py-3 px-4 text-left">Kegiatan</th>
+                                <th class="py-3 px-4 text-left">Tempat</th>
+                                <th class="py-3 px-4 text-left">Keterangan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                <td class="py-3 px-4">10 Juni 2023</td>
+                                <td class="py-3 px-4 font-medium">Workshop Kimia Komputasi</td>
+                                <td class="py-3 px-4">Lab. Komputer FMIPA</td>
+                                <td class="py-3 px-4">
+                                    <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">Pendaftaran
+                                        Dibuka</span>
+                                </td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                <td class="py-3 px-4">15-17 Juli 2023</td>
+                                <td class="py-3 px-4 font-medium">Chemistry Competition 2023</td>
+                                <td class="py-3 px-4">Auditorium UHO</td>
+                                <td class="py-3 px-4">
+                                    <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Segera
+                                        Dibuka</span>
+                                </td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                <td class="py-3 px-4">25 Agustus 2023</td>
+                                <td class="py-3 px-4 font-medium">Seminar Nasional Kimia</td>
+                                <td class="py-3 px-4">Aula FMIPA</td>
+                                <td class="py-3 px-4">
+                                    <span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs">Coming
+                                        Soon</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri Section -->
+    <section id="galeri" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-primary section-title mb-8">Galeri Kegiatan</h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 bg-gray-200">
+                        <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="300" height="200" fill="#f0f0f0" />
+                            <circle cx="150" cy="100" r="50" fill="#203759" opacity="0.3" />
+                            <text x="150" y="105" font-size="12" text-anchor="middle" fill="#333">Seminar Kimia</text>
+                        </svg>
+                    </div>
+                    <div class="p-3">
+                        <h4 class="font-medium">Seminar Kimia Terapan</h4>
+                        <p class="text-sm text-gray-600">April 2023</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 bg-gray-200">
+                        <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="300" height="200" fill="#f0f0f0" />
+                            <circle cx="150" cy="100" r="50" fill="#f9b217" opacity="0.3" />
+                            <text x="150" y="105" font-size="12" text-anchor="middle" fill="#333">Workshop</text>
+                        </svg>
+                    </div>
+                    <div class="p-3">
+                        <h4 class="font-medium">Workshop Instrumentasi</h4>
+                        <p class="text-sm text-gray-600">Maret 2023</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 bg-gray-200">
+                        <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="300" height="200" fill="#f0f0f0" />
+                            <circle cx="150" cy="100" r="50" fill="#203759" opacity="0.3" />
+                            <text x="150" y="105" font-size="12" text-anchor="middle" fill="#333">Studi Ekskursi</text>
+                        </svg>
+                    </div>
+                    <div class="p-3">
+                        <h4 class="font-medium">Kunjungan Industri</h4>
+                        <p class="text-sm text-gray-600">Februari 2023</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 bg-gray-200">
+                        <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="300" height="200" fill="#f0f0f0" />
+                            <circle cx="150" cy="100" r="50" fill="#f9b217" opacity="0.3" />
+                            <text x="150" y="105" font-size="12" text-anchor="middle" fill="#333">Chemistry Day</text>
+                        </svg>
+                    </div>
+                    <div class="p-3">
+                        <h4 class="font-medium">Chemistry Day 2023</h4>
+                        <p class="text-sm text-gray-600">Januari 2023</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 bg-gray-200">
+                        <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="300" height="200" fill="#f0f0f0" />
+                            <circle cx="150" cy="100" r="50" fill="#203759" opacity="0.3" />
+                            <text x="150" y="105" font-size="12" text-anchor="middle" fill="#333">Bakti Sosial</text>
+                        </svg>
+                    </div>
+                    <div class="p-3">
+                        <h4 class="font-medium">Bakti Sosial</h4>
+                        <p class="text-sm text-gray-600">Desember 2022</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 bg-gray-200">
+                        <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="300" height="200" fill="#f0f0f0" />
+                            <circle cx="150" cy="100" r="50" fill="#f9b217" opacity="0.3" />
+                            <text x="150" y="105" font-size="12" text-anchor="middle" fill="#333">Kompetisi</text>
+                        </svg>
+                    </div>
+                    <div class="p-3">
+                        <h4 class="font-medium">Chemistry Competition</h4>
+                        <p class="text-sm text-gray-600">November 2022</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 bg-gray-200">
+                        <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="300" height="200" fill="#f0f0f0" />
+                            <circle cx="150" cy="100" r="50" fill="#203759" opacity="0.3" />
+                            <text x="150" y="105" font-size="12" text-anchor="middle" fill="#333">Praktikum</text>
+                        </svg>
+                    </div>
+                    <div class="p-3">
+                        <h4 class="font-medium">Praktikum Kimia Organik</h4>
+                        <p class="text-sm text-gray-600">Oktober 2022</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 bg-gray-200">
+                        <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="300" height="200" fill="#f0f0f0" />
+                            <circle cx="150" cy="100" r="50" fill="#f9b217" opacity="0.3" />
+                            <text x="150" y="105" font-size="12" text-anchor="middle" fill="#333">Musyawarah</text>
+                        </svg>
+                    </div>
+                    <div class="p-3">
+                        <h4 class="font-medium">Musyawarah Anggota</h4>
+                        <p class="text-sm text-gray-600">September 2022</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <a href="#"
+                    class="inline-block px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-colors">Lihat
+                    Semua Foto</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Akademik Section -->
+    <section id="akademik" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-primary section-title mb-8">Informasi Akademik</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-primary/5 to-secondary/5 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <span class="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-book text-white"></i>
+                        </span>
+                        Program Studi
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            <span>S1 Kimia</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-secondary mr-2"></i>
+                            <span>S2 Kimia</span>
+                        </li>
+                    </ul>
+
+                    <h4 class="font-semibold mt-6 mb-2">Konsentrasi:</h4>
+                    <ul class="space-y-2 pl-5 list-disc text-gray-700">
+                        <li>Kimia Analitik</li>
+                        <li>Kimia Anorganik</li>
+                        <li>Kimia Organik</li>
+                        <li>Biokimia</li>
+                        <li>Kimia Fisika</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-primary/5 to-secondary/5 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <span class="w-10 h-10 bg-primary rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-flask text-white"></i>
+                        </span>
+                        Laboratorium
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-vial text-secondary mr-2 mt-1"></i>
+                            <div>
+                                <span class="font-medium">Lab. Kimia Analitik</span>
+                                <p class="text-sm text-gray-600">Analisis kuantitatif dan kualitatif sampel kimia.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-atom text-secondary mr-2 mt-1"></i>
+                            <div>
+                                <span class="font-medium">Lab. Kimia Anorganik</span>
+                                <p class="text-sm text-gray-600">Sintesis dan karakterisasi senyawa anorganik.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-microscope text-secondary mr-2 mt-1"></i>
+                            <div>
+                                <span class="font-medium">Lab. Kimia Organik</span>
+                                <p class="text-sm text-gray-600">Sintesis dan analisis senyawa organik.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-dna text-secondary mr-2 mt-1"></i>
+                            <div>
+                                <span class="font-medium">Lab. Biokimia</span>
+                                <p class="text-sm text-gray-600">Penelitian biomolekul dan proses biokimia.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12">
+                <h3 class="text-2xl font-bold text-primary mb-6">Prestasi Akademik</h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white p-5 rounded-lg shadow-md border-l-4 border-primary">
+                        <div class="flex items-center mb-3">
+                            <span class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-trophy text-primary"></i>
+                            </span>
+                            <h4 class="font-semibold">PIMNAS 2023</h4>
+                        </div>
+                        <p class="text-gray-600 text-sm">Medali Emas kategori Penelitian Eksakta dengan judul "Sintesis
+                            Nanopartikel Perak dari Ekstrak Daun Sirsak sebagai Antibakteri"</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-lg shadow-md border-l-4 border-secondary">
+                        <div class="flex items-center mb-3">
+                            <span class="w-10 h-10 bg-secondary/10 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-medal text-secondary"></i>
+                            </span>
+                            <h4 class="font-semibold">LKTI Nasional 2022</h4>
+                        </div>
+                        <p class="text-gray-600 text-sm">Juara 1 Lomba Karya Tulis Ilmiah Nasional dengan tema "Inovasi
+                            Kimia untuk Energi Terbarukan"</p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-lg shadow-md border-l-4 border-primary">
+                        <div class="flex items-center mb-3">
+                            <span class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-award text-primary"></i>
+                            </span>
+                            <h4 class="font-semibold">Chemistry Innovation 2022</h4>
+                        </div>
+                        <p class="text-gray-600 text-sm">Juara 2 Kompetisi Inovasi Kimia Tingkat Nasional dengan produk
+                            "Bioplastik dari Limbah Kulit Pisang"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak Section -->
+    <section id="kontak" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-primary section-title mb-8">Hubungi Kami</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-4">Informasi Kontak</h3>
+
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <span
+                                    class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                                </span>
+                                <div>
+                                    <h4 class="font-medium">Alamat</h4>
+                                    <p class="text-gray-600">Gedung FMIPA, Kampus Baru Universitas Halu Oleo, Anduonohu,
+                                        Kendari, Sulawesi Tenggara 93232</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <span
+                                    class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                    <i class="fas fa-envelope text-primary"></i>
+                                </span>
+                                <div>
+                                    <h4 class="font-medium">Email</h4>
+                                    <p class="text-gray-600">himaki@uho.ac.id</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <span
+                                    class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                    <i class="fas fa-phone-alt text-primary"></i>
+                                </span>
+                                <div>
+                                    <h4 class="font-medium">Telepon</h4>
+                                    <p class="text-gray-600">+62 401 3191929</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6">
+                            <h3 class="text-lg font-semibold mb-3">Media Sosial</h3>
+                            <div class="flex space-x-3">
+                                <a href="#"
+                                    class="w-10 h-10 bg-[#1877F2] rounded-full flex items-center justify-center text-white hover:bg-[#1877F2]/90 transition-colors">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 bg-[#1DA1F2] rounded-full flex items-center justify-center text-white hover:bg-[#1DA1F2]/90 transition-colors">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#"
+                                    class="w-10 h-10 bg-[#E4405F] rounded-full flex items-center justify-center text-white hover:bg-[#E4405F]/90 transition-colors">
+                                    <i class="fab fa-instagram"></i>
+                                    <a href="#"
+                                        class="w-10 h-10 bg-[#010101] rounded-full flex items-center justify-center text-white hover:bg-[#010101]/90 transition-colors">
+                                        <i class="fab fa-tiktok"></i>
+                                    </a>
+                                </a>
+                                <a href=" #"
+                                    class="w-10 h-10 bg-[#FF0000] rounded-full flex items-center justify-center text-white hover:bg-[#FF0000]/90 transition-colors">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 bg-[#25D366] rounded-full flex items-center justify-center
+                                        text-white hover:bg-[#25D366]/90 transition-colors">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-4">Kirim Pesan</h3>
+
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nama
+                                    Lengkap</label>
+                                <input type="text" id="name" name="name"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors"
+                                    required>
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" id="email" name="email"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors"
+                                    required>
+                            </div>
+
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subjek</label>
+                                <input type="text" id="subject" name="subject"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors"
+                                    required>
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Pesan</label>
+                                <textarea id="message" name="message" rows="4"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors"
+                                    required></textarea>
+                            </div>
+
+                            <div>
+                                <button type="submit"
+                                    class="w-full px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-colors">Kirim
+                                    Pesan</button>
+                            </div>
+                        </form>
+
+                        <div id="form-success" class="hidden mt-4 p-3 bg-green-100 text-green-700 rounded-lg">
+                            Pesan Anda telah terkirim. Terima kasih telah menghubungi kami!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center">
+                        <div class="flex items-center space-x-1 mr-3">
+                            <img src="uho.png" class="w-10 h-10 rounded-full" />
+                            <img src="hmj.png" class="w-10 h-10 rounded-full" />
+                            <img src="kabinet fluorine.png" class="w-10 h-10 rounded-full" />
+                        </div>
+                        <h3 class="text-xl font-bold">HMJ Kimia FMIPA UHO</h3>
+                    </div>
+                    <p class="text-white/80 mt-2 mb-4">Himpunan Mahasiswa Jurusan Kimia Fakultas Matematika dan Ilmu
+                        Pengetahuan Alam Universitas Halu Oleo</p>
+                    <div class="flex space-x-3">
+                        <a href="#"
+                            class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Link Cepat</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#beranda" class="text-white/80 hover:text-white transition-colors">Beranda</a></li>
+                        <li><a href="#profil" class="text-white/80 hover:text-white transition-colors">Profil</a></li>
+                        <li><a href="#berita" class="text-white/80 hover:text-white transition-colors">Berita</a></li>
+                        <li><a href="#kegiatan" class="text-white/80 hover:text-white transition-colors">Kegiatan</a>
+                        </li>
+                        <li><a href="#galeri" class="text-white/80 hover:text-white transition-colors">Galeri</a></li>
+                        <li><a href="#akademik" class="text-white/80 hover:text-white transition-colors">Akademik</a>
+                        </li>
+                        <li><a href="#kontak" class="text-white/80 hover:text-white transition-colors">Kontak</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Link Terkait</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://uho.ac.id" target="_blank"
+                                class="text-white/80 hover:text-white transition-colors">Universitas Halu Oleo</a></li>
+                        <li><a href="#" class="text-white/80 hover:text-white transition-colors">FMIPA UHO</a></li>
+                        <li><a href="#" class="text-white/80 hover:text-white transition-colors">Jurusan Kimia FMIPA
+                                UHO</a></li>
+                        <li><a href="#" class="text-white/80 hover:text-white transition-colors">Perpustakaan UHO</a>
+                        </li>
+                        <li><a href="#" class="text-white/80 hover:text-white transition-colors">E-Learning UHO</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-white/20 text-center">
+                <p>&copy; 2025 HMJ Kimia FMIPA UHO.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const navMenu = document.getElementById('nav-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+        });
+
+        // Active Navigation Link
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Image Slider
+        const slider = document.querySelector('.slider');
+        const sliderItems = document.querySelectorAll('.slider-item');
+        const prevBtn = document.querySelector('.slider-prev');
+        const nextBtn = document.querySelector('.slider-next');
+        const dots = document.querySelectorAll('.dot');
+
+        let currentIndex = 0;
+        const itemCount = sliderItems.length;
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            dots.forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.classList.add('bg-white');
+                    dot.classList.remove('bg-white/50');
+                } else {
+                    dot.classList.remove('bg-white');
+                    dot.classList.add('bg-white/50');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % itemCount;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + itemCount) % itemCount;
+            updateSlider();
+        }
+
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                updateSlider();
+            });
+        });
+
+        // Auto slide
+        setInterval(nextSlide, 5000);
+
+        // Contact Form
+        const contactForm = document.getElementById('contact-form');
+        const formSuccess = document.getElementById('form-success');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // In a real implementation, you would send the form data to a server
+            // For demo purposes, we'll just show the success message
+            formSuccess.classList.remove('hidden');
+            contactForm.reset();
+
+            setTimeout(() => {
+                formSuccess.classList.add('hidden');
+            }, 5000);
+        });
+
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'invisible');
+                backToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'invisible');
+                backToTopBtn.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'96623f89d7088093',t:'MTc1MzY4MzM5MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
+</html>
